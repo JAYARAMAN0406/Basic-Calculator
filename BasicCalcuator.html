@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Styled Calculator</title>
+  <link rel="stylesheet" href="Styles.css" />
+</head>
+<body>
+  <div class="calculator" id="calculator">
+    <div class="display" id="display" contenteditable="true">
+      <div class="equation-text" id="equation"></div>
+      <div class="result-text" id="result">0</div>
+    </div>
+    <div class="memory-buttons">
+      <button class="memory-button" onclick="storeMemory()">MS</button>
+      <button class="memory-button" onclick="memoryAdd()">M+</button>
+      <button class="memory-button" onclick="memorySubtract()">M-</button>
+      <button class="memory-button dropdown-toggle" onclick="toggleMemoryModal()">M</button>
+      <button class="memory-button" onclick="memoryReview()">MR</button>
+      <button class="memory-button" onclick="memoryClear()">MC</button>
+      <button class="memory-button" onclick="showPrevious()">Prev</button>
+      <button class="memory-button" onclick="showNext()">Next</button>
+      <div id="memoryModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeMemoryModal()">×</span>
+          <h2>Memory</h2>
+          <div id="memoryItems">
+           
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <div class="buttons">
+      <button class="button clear" id="clearButton" onclick="clearAll()">C</button>
+      <button class="button backspace" onclick="backspace()">⌫</button>
+      <button class="button operator" onclick="append('/')">/</button>
+      <button class="button operator" onclick="append('*')">*</button>
+
+      <button class="button" onclick="append('7')">7</button>
+      <button class="button" onclick="append('8')">8</button>
+      <button class="button" onclick="append('9')">9</button>
+      <button class="button operator" onclick="append('-')">-</button>
+
+      <button class="button" onclick="append('4')">4</button>
+      <button class="button" onclick="append('5')">5</button>
+      <button class="button" onclick="append('6')">6</button>
+      <button class="button operator" onclick="append('+')">+</button>
+
+      <button class="button" onclick="append('1')">1</button>
+      <button class="button" onclick="append('2')">2</button>
+      <button class="button" onclick="append('3')">3</button>
+      <button class="button equal" onclick="calculate()">=</button>
+
+      <button class="button" onclick="append('0')">0</button>
+      <button class="button" onclick="append('.')">.</button>
+      <button class="button" onclick="calculatePercentage()">%</button>
+      <button class="button" onclick="square()">x²</button>
+      
+      <button class="button" onclick="cube()">x³</button>
+      <button class="button" onclick="toggleSign()">+/-</button>
+
+      <button class="button mode-toggle" onclick="toggleMode()" id="modeIcon">🌙</button>
+      <button class="button rgb-toggle" id="rgbButton" onclick="toggleRgbLight()">RGB</button>
+    </div>
+
+  
+  </div>
+
+  <script src="Script.js"></script>
+    
+  
+</body>
+</html>
